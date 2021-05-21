@@ -25,6 +25,13 @@ public class HelloController {
     @Autowired
     TokenTask tokenTask;
 
+    /**
+     * 如果 code 不为 null，也就是如果是通过授权服务器重定向到这个地址来的，那么我们做如下两个操作：
+     * 根据拿到的 code，去请求 http://localhost:8080/oauth/token 地址去获取
+     * @param code
+     * @param model
+     * @return
+     */
     @GetMapping("/index.html")
     public String hello(String code, Model model) {
 //        if (code != null) {
